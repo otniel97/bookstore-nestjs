@@ -35,7 +35,6 @@ export class RoleService {
     }
         
     async create(role: Partial<CreateRoleDto>): Promise<ReadRoleDto>{
-        
         const savedRole: Role = await this._roleRepository.save(role);
         return plainToClass(ReadRoleDto, savedRole);
     }
